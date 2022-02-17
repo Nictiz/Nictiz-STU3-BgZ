@@ -173,18 +173,14 @@
                 <code value="search-type"/>
             </interaction>
             <searchInclude value="Patient:general-practitioner"/>
-            <searchParam>
-                <name value="identifier"/>
-                <type value="token"/>
-            </searchParam>
         </resource>
         <resource>
             <type value="Coverage"/>
             <interaction>
                 <code value="search-type"/>
             </interaction>
-            <searchInclude value="Coverage:payor"/>
-            <searchInclude value="Coverage:Organization"/>
+            <searchInclude value="Coverage:payor:Patient"/>
+            <searchInclude value="Coverage:payor:Organization"/>
         </resource>
         <resource>
             <type value="Consent"/>
@@ -259,6 +255,17 @@
             </searchParam>
         </resource>
         <resource>
+            <type value="MedicationDispense"/>
+            <interaction>
+                <code value="search-type"/>
+            </interaction>
+            <searchInclude value="MedicationDispense:medication"/>
+            <searchParam>
+                <name value="category"/>
+                <type value="token"/>
+            </searchParam>
+        </resource>
+        <resource>
             <type value="DeviceUseStatement"/>
             <interaction>
                 <code value="search-type"/>
@@ -312,21 +319,11 @@
             </interaction>
         </resource>
         <resource>
-            <type value="MedicationDispense"/>
-            <interaction>
-                <code value="search-type"/>
-            </interaction>
-            <searchInclude value="MedicationDispense:medication"/>
-            <searchParam>
-                <name value="category"/>
-                <type value="token"/>
-            </searchParam>
-        </resource>
-        <resource>
             <type value="DeviceRequest"/>
             <interaction>
                 <code value="search-type"/>
             </interaction>
+            <searchInclude value="DeviceRequest:device"/>
             <searchParam>
                 <name value="status"/>
                 <type value="token"/>
@@ -346,7 +343,7 @@
             <name value="Last N Observations Query"/>
             <definition>
                 <reference value="http://hl7.org/fhir/OperationDefinition/Observation-lastn"/>
-        <display value="Observation-lastn"/>
+                <display value="Observation-lastn"/>
             </definition>
         </operation>
     </rest>
