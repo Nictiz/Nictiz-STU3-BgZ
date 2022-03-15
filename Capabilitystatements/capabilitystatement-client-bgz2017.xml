@@ -261,8 +261,9 @@
             </interaction>
             <searchInclude value="MedicationDispense:medication"/>
             <searchParam>
-                <name value="category"/>
-                <type value="token"/>
+                <name value="category" />
+                <definition value="http://nictiz.nl/fhir/SearchParameter/Medications-category" />
+                <type value="token" />
             </searchParam>
         </resource>
         <resource>
