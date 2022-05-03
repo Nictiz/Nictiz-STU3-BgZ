@@ -1,6 +1,6 @@
 {
     "name": "nictiz.fhir.nl.stu3.bgz",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "canonical": null,
     "url": "https://informatiestandaarden.nictiz.nl/wiki/MedMij:V2020.01/OntwerpBGZ_2017",
     "title": "Nictiz FHIR NL STU3 BgZ",
