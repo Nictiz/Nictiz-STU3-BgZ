@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://nictiz.nl/fhir/StructureDefinition/BgZMszNotificationTask" />
+  <name value="BgZMszNotificationTask" />
+  <status value="draft" />
+  <fhirVersion value="3.0.2" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Task" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Task" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Task">
+      <path value="Task" />
+      <short value="BgZ MSZ Notification Task" />
+      <definition value="BgZ MSZ Notified Pull - Notification Task" />
+    </element>
+    <element id="Task.identifier">
+      <path value="Task.identifier" />
+      <definition value="Business identifier of the task. This is a required field for traceability and cancellation of individual Notifications." />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Task.basedOn">
+      <path value="Task.basedOn" />
+      <definition value="Optional reference to a request-Type resource that produced this event. If a workflow has been initiated and a Workflow Task is present (value of input:get-workflow-task slice is true, then the Workflow Task must be referenced here." />
+    </element>
+    <element id="Task.groupIdentifier">
+      <path value="Task.groupIdentifier" />
+      <definition value="Unique identifier of the data set that is made available.&#xD;&#xA;An update to an existing data set at the Sending System triggers a new Notification Task, and thus a new Notification Task instance. Multiple Notifications Tasks on the same data set must share one unique identifier so that the Receiving System can identify them as relating to the same data set at the Sending System." />
+      <min value="1" />
+    </element>
+    <element id="Task.status">
+      <path value="Task.status" />
+      <short value="Task status" />
+      <definition value="The state communicated by this event.&#xD;&#xA;Fixed value: &quot;requested&quot;" />
+      <fixedCode value="requested" />
+    </element>
+    <element id="Task.intent">
+      <path value="Task.intent" />
+      <short value="Task intent" />
+      <definition value="Indicates the &quot;level&quot; of actionability associated with the Task.&#xD;&#xA;Preferred value: &quot;proposal&quot;" />
+      <fixedCode value="proposal" />
+    </element>
+    <element id="Task.code">
+      <path value="Task.code" />
+      <min value="1" />
+    </element>
+    <element id="Task.code.coding">
+      <path value="Task.code.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Task.code.coding.system">
+      <path value="Task.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.nl/fhir/NamingSystem/TaskCode" />
+    </element>
+    <element id="Task.code.coding.code">
+      <path value="Task.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="pull-notification" />
+    </element>
+    <element id="Task.description">
+      <path value="Task.description" />
+      <short value="Notification task from sending system" />
+      <definition value="The Notification Task is sent from the Sending System to the Receiving System using a Push interaction (HTTP POST or PUT)" />
+    </element>
+    <element id="Task.requester">
+      <path value="Task.requester" />
+      <min value="1" />
+    </element>
+    <element id="Task.requester.agent.identifier">
+      <path value="Task.requester.agent.identifier" />
+      <definition value="Identifier of the system that created this Notification. This could be the originating EHR System or the routing gateway system, dependent on which system created the Notification Task.&#xD;&#xA;&lt;did of Sending Organization&gt;/serviceEndpoint?type=fhir" />
+      <min value="1" />
+    </element>
+    <element id="Task.requester.onBehalfOf">
+      <path value="Task.requester.onBehalfOf" />
+      <min value="1" />
+    </element>
+    <element id="Task.requester.onBehalfOf.identifier">
+      <path value="Task.requester.onBehalfOf.identifier" />
+      <definition value="Identifier of the Healthcare Organization at which the data has been made available.&#xD;&#xA;did of Sending Organization" />
+      <min value="1" />
+    </element>
+    <element id="Task.owner">
+      <path value="Task.owner" />
+      <min value="1" />
+    </element>
+    <element id="Task.owner.identifier">
+      <path value="Task.owner.identifier" />
+      <definition value="Identifier of the Receiving Healthcare Organization.&#xD;&#xA;did of Receiving Organization" />
+      <min value="1" />
+    </element>
+    <element id="Task.restriction">
+      <path value="Task.restriction" />
+      <min value="1" />
+    </element>
+    <element id="Task.restriction.period">
+      <path value="Task.restriction.period" />
+      <definition value="The period during which the data will be available for retrieval." />
+    </element>
+    <element id="Task.input">
+      <path value="Task.input" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="type.coding.system" />
+        </discriminator>
+        <discriminator>
+          <type value="value" />
+          <path value="type.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <definition value="Four types of input slices are defined:&#xD;&#xA;1) input:authorization-base&#xD;&#xA;2) input:get-workflow-task&#xD;&#xA;3) input:read-available-resource&#xD;&#xA;4) input:query-available-resources&#xD;&#xA;The read (3) and query (4) slices are further sliced in this structure definion as shown below." />
+    </element>
+    <element id="Task.input:authorizationBase">
+      <path value="Task.input" />
+      <sliceName value="authorizationBase" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:authorizationBase.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://fhir.nl/fhir/NamingSystem/TaskParameter" />
+    </element>
+    <element id="Task.input:authorizationBase.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="authorization-base" />
+    </element>
+    <element id="Task.input:authorizationBase.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:authorizationBase.value[x]:authorizationBaseValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="authorizationBaseValueString" />
+      <short value="authorization base token" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Task.input:workflowTask">
+      <path value="Task.input" />
+      <sliceName value="workflowTask" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:workflowTask.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://fhir.nl/fhir/NamingSystem/TaskParameter" />
+    </element>
+    <element id="Task.input:workflowTask.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="get-workflow-task" />
+    </element>
+    <element id="Task.input:workflowTask.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:workflowTask.value[x]:workflowTaskValueBoolean">
+      <path value="Task.input.value[x]" />
+      <sliceName value="workflowTaskValueBoolean" />
+      <short value="workflow task indicator" />
+      <definition value="Where workflowTaskValueBoolean is:&#xD;&#xA;a) true, the basedOn Workflow Task must be retrieved to get all available resources;&#xD;&#xA;b) false, all available resources are available in the input:read-available-resource and input:query-available-resources input slices." />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Task.input:patient">
+      <path value="Task.input" />
+      <sliceName value="patient" />
+      <short value="Patient read" />
+      <definition value="Patient input:read-available-resource slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:patient.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Task.input:patient.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="79191-3" />
+    </element>
+    <element id="Task.input:patient.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:patient.value[x]:patientValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="patientValueString" />
+      <short value="patient item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="Patient?_include=Patient:general-practitioner" />
+    </element>
+    <element id="Task.input:payer">
+      <path value="Task.input" />
+      <sliceName value="payer" />
+      <short value="Payer search" />
+      <definition value="Payer input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:payer.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Task.input:payer.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="48768-6" />
+    </element>
+    <element id="Task.input:payer.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:payer.value[x]:payerValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="payerValueString" />
+      <short value="payer item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="Coverage?_include=Coverage:payor:Patient&amp;_include=Coverage:payor:Organization" />
+    </element>
+    <element id="Task.input:payer.value[x]:valueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="valueString" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Task.input:treatmentDirective">
+      <path value="Task.input" />
+      <sliceName value="treatmentDirective" />
+      <short value="TreatmentDirective search" />
+      <definition value="TreatmentDirective input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:treatmentDirective.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://snomed.info/sct" />
+    </element>
+    <element id="Task.input:treatmentDirective.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="11291000146105" />
+    </element>
+    <element id="Task.input:treatmentDirective.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:treatmentDirective.value[x]:treatmentDirectiveValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="treatmentDirectiveValueString" />
+      <short value="treatmentDirective item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="Consent?category=http://snomed.info/sct|11291000146105" />
+    </element>
+    <element id="Task.input:advanceDirective">
+      <path value="Task.input" />
+      <sliceName value="advanceDirective" />
+      <short value="AdvanceDirective search" />
+      <definition value="AdvanceDirective input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:advanceDirective.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://snomed.info/sct" />
+    </element>
+    <element id="Task.input:advanceDirective.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="11341000146107" />
+    </element>
+    <element id="Task.input:advanceDirective.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:advanceDirective.value[x]:advanceDirectiveValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="advanceDirectiveValueString" />
+      <short value="advanceDirective item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="Consent?category=http://snomed.info/sct|11341000146107" />
+    </element>
+    <element id="Task.input:contactPerson">
+      <path value="Task.input" />
+      <sliceName value="contactPerson" />
+      <short value="ContactPerson search" />
+      <definition value="ContactPerson input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:contactPerson.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Task.input:contactPerson.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="79191-3" />
+    </element>
+    <element id="Task.input:contactPerson.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:contactPerson.value[x]:contactPersonValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="contactPersonValueString" />
+      <short value="contactPerson item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="Don't know - need to fill in" />
+    </element>
+    <element id="Task.input:functionalOrMentalStatus">
+      <path value="Task.input" />
+      <sliceName value="functionalOrMentalStatus" />
+      <short value="FunctionalOrMentalStatus search" />
+      <definition value="FunctionalOrMentalStatus input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:functionalOrMentalStatus.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Task.input:functionalOrMentalStatus.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="47420-5" />
+    </element>
+    <element id="Task.input:functionalOrMentalStatus.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:functionalOrMentalStatus.value[x]:functionalOrMentalStatusValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="functionalOrMentalStatusValueString" />
+      <short value="functionalOrMentalStatus item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="Observation/$lastn?category=http://snomed.info/sct|118228005,http://snomed.info/sct|384821006" />
+    </element>
+    <element id="Task.input:concern">
+      <path value="Task.input" />
+      <sliceName value="concern" />
+      <short value="Concern search" />
+      <definition value="Concern input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:concern.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Task.input:concern.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="11450-4" />
+    </element>
+    <element id="Task.input:concern.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:concern.value[x]:concernValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="concernValueString" />
+      <short value="concern item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="Condition" />
+    </element>
+    <element id="Task.input:livingSituation">
+      <path value="Task.input" />
+      <sliceName value="livingSituation" />
+      <short value="LivingSituation search" />
+      <definition value="LivingSituation input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:livingSituation.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://snomed.info/sct" />
+    </element>
+    <element id="Task.input:livingSituation.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="365508006" />
+    </element>
+    <element id="Task.input:livingSituation.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:livingSituation.value[x]:livingSituationValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="livingSituationValueString" />
+      <short value="livingSituation item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="Observation/$lastn?code=http://snomed.info/sct|365508006" />
+    </element>
+    <element id="Task.input:drugUse">
+      <path value="Task.input" />
+      <sliceName value="drugUse" />
+      <short value="DrugUse search" />
+      <definition value="DrugUse input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:drugUse.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://snomed.info/sct" />
+    </element>
+    <element id="Task.input:drugUse.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="228366006" />
+    </element>
+    <element id="Task.input:drugUse.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:drugUse.value[x]:drugUseValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="drugUseValueString" />
+      <short value="drugUse item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="Observation?code=http://snomed.info/sct|228366006" />
+    </element>
+    <element id="Task.input:alcoholUse">
+      <path value="Task.input" />
+      <sliceName value="alcoholUse" />
+      <short value="AlcoholUse search" />
+      <definition value="AlcoholUse input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:alcoholUse.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://snomed.info/sct" />
+    </element>
+    <element id="Task.input:alcoholUse.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="228273003" />
+    </element>
+    <element id="Task.input:alcoholUse.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:alcoholUse.value[x]:alcoholUseValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="alcoholUseValueString" />
+      <short value="alcoholUse item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="Observation?code=http://snomed.info/sct|228273003" />
+    </element>
+    <element id="Task.input:tobaccoUse">
+      <path value="Task.input" />
+      <sliceName value="tobaccoUse" />
+      <short value="TabaccoUse search" />
+      <definition value="TabaccoUse input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:tobaccoUse.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://snomed.info/sct" />
+    </element>
+    <element id="Task.input:tobaccoUse.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="365980008" />
+    </element>
+    <element id="Task.input:tobaccoUse.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:tobaccoUse.value[x]:tobaccoUseValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="tobaccoUseValueString" />
+      <short value="tobaccoUse item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="Observation?code=http://snomed.info/sct|365980008" />
+    </element>
+    <element id="Task.input:nutritionAdvice">
+      <path value="Task.input" />
+      <sliceName value="nutritionAdvice" />
+      <short value="NutritionAdvice search" />
+      <definition value="NutritionAdvice input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:nutritionAdvice.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://snomed.info/sct" />
+    </element>
+    <element id="Task.input:nutritionAdvice.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="111816003" />
+    </element>
+    <element id="Task.input:nutritionAdvice.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:nutritionAdvice.value[x]:nutritionAdviceValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="nutritionAdviceValueString" />
+      <short value="nutritionAdvice item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="NutritionOrder" />
+    </element>
+    <element id="Task.input:alert">
+      <path value="Task.input" />
+      <sliceName value="alert" />
+      <short value="Alert search" />
+      <definition value="Alert input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:alert.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Task.input:alert.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="75310-3" />
+    </element>
+    <element id="Task.input:alert.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:alert.value[x]:alertValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="alertValueString" />
+      <short value="alert item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="Flag" />
+    </element>
+    <element id="Task.input:allergyIntolerance">
+      <path value="Task.input" />
+      <sliceName value="allergyIntolerance" />
+      <short value="AllergyIntolerance search" />
+      <definition value="AllergyIntolerace input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:allergyIntolerance.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Task.input:allergyIntolerance.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="48765-2" />
+    </element>
+    <element id="Task.input:allergyIntolerance.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:allergyIntolerance.value[x]:allergyIntoleranceValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="allergyIntoleranceValueString" />
+      <short value="allergyIntolerance item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="AllergyIntolerance" />
+    </element>
+    <element id="Task.input:medicationUse">
+      <path value="Task.input" />
+      <sliceName value="medicationUse" />
+      <short value="MedicationUse search" />
+      <definition value="MedicationUse input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:medicationUse.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://snomed.info/sct" />
+    </element>
+    <element id="Task.input:medicationUse.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="422979000" />
+    </element>
+    <element id="Task.input:medicationUse.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:medicationUse.value[x]:medicationUseValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="medicationUseValueString" />
+      <short value="medicationUse item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="MedicationStatement?category=urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.3|6&amp;_include=MedicationStatement:medication" />
+    </element>
+    <element id="Task.input:medicationAgreement">
+      <path value="Task.input" />
+      <sliceName value="medicationAgreement" />
+      <short value="MedicationAgreement search" />
+      <definition value="MedicationAgreement input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:medicationAgreement.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://snomed.info/sct" />
+    </element>
+    <element id="Task.input:medicationAgreement.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="16076005" />
+    </element>
+    <element id="Task.input:medicationAgreement.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:medicationAgreement.value[x]:medicationAgreementValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="medicationAgreementValueString" />
+      <short value="medicationAgreement item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="MedicationRequest?category=http://snomed.info/sct|16076005&amp;_include=MedicationRequest:medication" />
+    </element>
+    <element id="Task.input:administrationAgreement">
+      <path value="Task.input" />
+      <sliceName value="administrationAgreement" />
+      <short value="AdministrationAgreement search" />
+      <definition value="AdministrationAgreement input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:administrationAgreement.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://snomed.info/sct" />
+    </element>
+    <element id="Task.input:administrationAgreement.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="422037009" />
+    </element>
+    <element id="Task.input:administrationAgreement.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:administrationAgreement.value[x]:administrationAgreementValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="administrationAgreementValueString" />
+      <short value="administrationAgreement item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="MedicationDispense?category=http://snomed.info/sct|422037009&amp;_include=MedicationDispense:medication" />
+    </element>
+    <element id="Task.input:medicalDevice">
+      <path value="Task.input" />
+      <sliceName value="medicalDevice" />
+      <short value="MedicalDevice search" />
+      <definition value="MedicalDevice input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:medicalDevice.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Task.input:medicalDevice.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="46264-8" />
+    </element>
+    <element id="Task.input:medicalDevice.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:medicalDevice.value[x]:medicalDeviceValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="medicalDeviceValueString" />
+      <short value="medicalDevice item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="DeviceUseStatement?_include=DeviceUseStatement:device" />
+    </element>
+    <element id="Task.input:vaccination">
+      <path value="Task.input" />
+      <sliceName value="vaccination" />
+      <short value="Vaccination search" />
+      <definition value="Vaccination input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:vaccination.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Task.input:vaccination.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="11369-6" />
+    </element>
+    <element id="Task.input:vaccination.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:vaccination.value[x]:vaccinationValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="vaccinationValueString" />
+      <short value="vaccination item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="Immunization?status=completed" />
+    </element>
+    <element id="Task.input:bloodPressure">
+      <path value="Task.input" />
+      <sliceName value="bloodPressure" />
+      <short value="BloodPressure search" />
+      <definition value="BloodPressure input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:bloodPressure.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Task.input:bloodPressure.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="85354-9" />
+    </element>
+    <element id="Task.input:bloodPressure.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:bloodPressure.value[x]:bloodPressureValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="bloodPressureValueString" />
+      <short value="bloodPressure item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="Observation/$lastn?code=http://loinc.org|85354-9" />
+    </element>
+    <element id="Task.input:bodyWeight">
+      <path value="Task.input" />
+      <sliceName value="bodyWeight" />
+      <short value="BodyWeight search" />
+      <definition value="BodyWeight input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:bodyWeight.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Task.input:bodyWeight.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="29463-7" />
+    </element>
+    <element id="Task.input:bodyWeight.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:bodyWeight.value[x]:bodyWeightValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="bodyWeightValueString" />
+      <short value="bodyWeight item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="Observation/$lastn?code=http://loinc.org|29463-7" />
+    </element>
+    <element id="Task.input:bodyHeight">
+      <path value="Task.input" />
+      <sliceName value="bodyHeight" />
+      <short value="BodyHeight search" />
+      <definition value="BodyHeight input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:bodyHeight.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Task.input:bodyHeight.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="8302-2" />
+    </element>
+    <element id="Task.input:bodyHeight.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:bodyHeight.value[x]:bodyHeightValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="bodyHeightValueString" />
+      <short value="bodyHeight item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="Observation/$lastn?code=http://loinc.org|8302-2,http://loinc.org|8306-3,http://loinc.org|8308-9" />
+    </element>
+    <element id="Task.input:laboratoryTestResult">
+      <path value="Task.input" />
+      <sliceName value="laboratoryTestResult" />
+      <short value="LaboratoryTestResult search" />
+      <definition value="LaboratoryTestResult input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:laboratoryTestResult.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://snomed.info/sct" />
+    </element>
+    <element id="Task.input:laboratoryTestResult.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="15220000" />
+    </element>
+    <element id="Task.input:laboratoryTestResult.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:laboratoryTestResult.value[x]:laboratoryTestResultValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="laboratoryTestResultValueString" />
+      <short value="laboratoryTestResult item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="Observation/$lastn?category=http://snomed.info/sct|275711006&amp;_include=Observation:related-target&amp;_include=Observation:specimen" />
+    </element>
+    <element id="Task.input:procedure">
+      <path value="Task.input" />
+      <sliceName value="procedure" />
+      <short value="Procedure search" />
+      <definition value="Procedure input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:procedure.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Task.input:procedure.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="47519-4" />
+    </element>
+    <element id="Task.input:procedure.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:procedure.value[x]:procedureValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="procedureValueString" />
+      <short value="procedure item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="Procedure?category=http://snomed.info/sct|387713003" />
+    </element>
+    <element id="Task.input:contact">
+      <path value="Task.input" />
+      <sliceName value="contact" />
+      <short value="Contact search" />
+      <definition value="Contact input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:contact.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Task.input:contact.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="46240-8" />
+    </element>
+    <element id="Task.input:contact.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:contact.value[x]:contactValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="contactValueString" />
+      <short value="contact item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="Encounter?class=http://hl7.org/fhir/v3/ActCode|IMP,http://hl7.org/fhir/v3/ActCode|ACUTE,http://hl7.org/fhir/v3/ActCode|NONAC" />
+    </element>
+    <element id="Task.input:healthProvider">
+      <path value="Task.input" />
+      <sliceName value="healthProvider" />
+      <short value="HealthProvider search" />
+      <definition value="HealthProvider input:query-available-resources slice" />
+      <max value="1" />
+    </element>
+    <element id="Task.input:healthProvider.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Task.input:healthProvider.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="check-code" />
+    </element>
+    <element id="Task.input:healthProvider.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:healthProvider.value[x]:healthProviderValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="healthProviderValueString" />
+      <short value="healthProvider item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="CareTeam?_include=CareTeam:participant" />
+    </element>
+  </differential>
+</StructureDefinition>
