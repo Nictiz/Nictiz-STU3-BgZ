@@ -517,7 +517,7 @@
       <type>
         <code value="string" />
       </type>
-      <fixedString value="Observation?code=http://snomed.info/sct|228273003" />
+      <fixedString value="Observation/$lastn?code=http://snomed.info/sct|228273003" />
     </element>
     <element id="Task.input:tobaccoUse">
       <path value="Task.input" />
@@ -551,7 +551,7 @@
       <type>
         <code value="string" />
       </type>
-      <fixedString value="Observation?code=http://snomed.info/sct|365980008" />
+      <fixedString value="Observation/$lastn?code=http://snomed.info/sct|365980008" />
     </element>
     <element id="Task.input:nutritionAdvice">
       <path value="Task.input" />
@@ -585,7 +585,7 @@
       <type>
         <code value="string" />
       </type>
-      <fixedString value="NutritionOrder" />
+      <fixedString value="NutritionOrder?_sort=-dateTime&amp;_count=1" />
     </element>
     <element id="Task.input:alert">
       <path value="Task.input" />
@@ -993,7 +993,7 @@
       <type>
         <code value="string" />
       </type>
-      <fixedString value="Procedure?category=http://snomed.info/sct|387713003" />
+      <fixedString value="Procedure" />
     </element>
     <element id="Task.input:contact">
       <path value="Task.input" />
@@ -1027,7 +1027,7 @@
       <type>
         <code value="string" />
       </type>
-      <fixedString value="Encounter?class=http://hl7.org/fhir/v3/ActCode|IMP,http://hl7.org/fhir/v3/ActCode|ACUTE,http://hl7.org/fhir/v3/ActCode|NONAC" />
+      <fixedString value="Encounter" />
     </element>
     <element id="Task.input:healthProvider">
       <path value="Task.input" />
@@ -1061,7 +1061,7 @@
       <type>
         <code value="string" />
       </type>
-      <fixedString value="CareTeam?_include=CareTeam:participant" />
+      <fixedString value="CareTeam?status=active_include=CareTeam:participant" />
     </element>
   </differential>
 </StructureDefinition>
