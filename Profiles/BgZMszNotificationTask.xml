@@ -245,7 +245,7 @@
       <type>
         <code value="string" />
       </type>
-      <fixedString value="Coverage?_include=Coverage:payor:Patient&amp;_include=Coverage:payor:Organization" />
+      <fixedString value="Coverage?_include=Coverage:payor:Patient&amp;_include=Coverage:payor:Organization&amp;_include=Coverage:payor:RelatedPerson" />
     </element>
     <element id="Task.input:treatmentDirective">
       <path value="Task.input" />
@@ -585,7 +585,7 @@
       <type>
         <code value="string" />
       </type>
-      <fixedString value="NutritionOrder?_sort=-dateTime&amp;_count=1" />
+      <fixedString value="NutritionOrder" />
     </element>
     <element id="Task.input:alert">
       <path value="Task.input" />
