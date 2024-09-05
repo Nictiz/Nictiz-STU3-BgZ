@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="BgZMszWorkflowTask" />
   <url value="http://nictiz.nl/fhir/StructureDefinition/BgZMszWorkflowTask" />
   <name value="BgZMszWorkflowTask" />
+  <title value="BgZMszWorkflowTask" />
   <status value="draft" />
+  <publisher value="Nictiz" />
+  <copyright value="CC0" />
   <fhirVersion value="3.0.2" />
+  <mapping>
+    <identity value="BgZ-msz" />
+    <uri value="https://decor.nictiz.nl/art-decor/decor-datasets--bgz2017-?id=2.16.840.1.113883.2.4.3.11.60.42.1.2" />
+    <name value="BgZ-msz" />
+  </mapping>
   <kind value="resource" />
   <abstract value="false" />
   <type value="Task" />
@@ -152,6 +161,11 @@
       <short value="Patient read" />
       <definition value="Patient input:read-available-resource slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-74" />
+        <comment value="Patient" />
+      </mapping>
     </element>
     <element id="Task.input:patient.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -186,6 +200,11 @@
       <short value="Payer search" />
       <definition value="Payer input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-482" />
+        <comment value="Betaler" />
+      </mapping>
     </element>
     <element id="Task.input:payer.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -220,6 +239,11 @@
       <short value="TreatmentDirective search" />
       <definition value="TreatmentDirective input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-230" />
+        <comment value="BehandelAanwijzing" />
+      </mapping>
     </element>
     <element id="Task.input:treatmentDirective.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -254,6 +278,11 @@
       <short value="AdvanceDirective search" />
       <definition value="AdvanceDirective input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-243" />
+        <comment value="Wilsverklaring" />
+      </mapping>
     </element>
     <element id="Task.input:advanceDirective.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -288,6 +317,11 @@
       <short value="ContactPerson search" />
       <definition value="ContactPerson input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-252" />
+        <comment value="Contactpersoon" />
+      </mapping>
     </element>
     <element id="Task.input:contactPerson.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -322,6 +356,11 @@
       <short value="FunctionalOrMentalStatus search" />
       <definition value="FunctionalOrMentalStatus input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-356" />
+        <comment value="FunctioneleOfMentaleStatus" />
+      </mapping>
     </element>
     <element id="Task.input:functionalOrMentalStatus.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -356,6 +395,11 @@
       <short value="Concern search" />
       <definition value="Concern input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-131" />
+        <comment value="Probleem" />
+      </mapping>
     </element>
     <element id="Task.input:concern.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -390,6 +434,11 @@
       <short value="LivingSituation search" />
       <definition value="LivingSituation input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-521" />
+        <comment value="Woonsituatie" />
+      </mapping>
     </element>
     <element id="Task.input:livingSituation.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -424,6 +473,11 @@
       <short value="DrugUse search" />
       <definition value="DrugUse input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-302" />
+        <comment value="DrugsGebruik" />
+      </mapping>
     </element>
     <element id="Task.input:drugUse.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -458,6 +512,11 @@
       <short value="AlcoholUse search" />
       <definition value="AlcoholUse input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-312" />
+        <comment value="AlcoholGebruik" />
+      </mapping>
     </element>
     <element id="Task.input:alcoholUse.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -492,6 +551,11 @@
       <short value="TabaccoUse search" />
       <definition value="TabaccoUse input:query-available-resources slice" />
       <max value="1" />
+      	<mapping>
+          <identity value="BgZ-msz" />
+          <map value="bgz2017-dataelement-320" />
+          <comment value="TabakGebruik" />
+        </mapping>
     </element>
     <element id="Task.input:tobaccoUse.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -526,6 +590,11 @@
       <short value="NutritionAdvice search" />
       <definition value="NutritionAdvice input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-524" />
+        <comment value="Voedingsadvies" />
+      </mapping>
     </element>
     <element id="Task.input:nutritionAdvice.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -560,6 +629,11 @@
       <short value="Alert search" />
       <definition value="Alert input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-292" />
+        <comment value="Alert" />
+      </mapping>
     </element>
     <element id="Task.input:alert.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -594,6 +668,11 @@
       <short value="AllergyIntolerance search" />
       <definition value="AllergyIntolerace input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-211" />
+        <comment value="AllergieIntolerantie" />
+      </mapping>
     </element>
     <element id="Task.input:allergyIntolerance.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -730,6 +809,11 @@
       <short value="MedicalDevice search" />
       <definition value="MedicalDevice input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-331" />
+        <comment value="MedischHulpmiddel" />
+      </mapping>
     </element>
     <element id="Task.input:medicalDevice.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -764,6 +848,11 @@
       <short value="Vaccination search" />
       <definition value="Vaccination input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-347" />
+        <comment value="Vaccinatie" />
+      </mapping>
     </element>
     <element id="Task.input:vaccination.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -798,6 +887,11 @@
       <short value="BloodPressure search" />
       <definition value="BloodPressure input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-364" />
+        <comment value="Bloeddruk" />
+      </mapping>
     </element>
     <element id="Task.input:bloodPressure.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -832,6 +926,11 @@
       <short value="BodyWeight search" />
       <definition value="BodyWeight input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-375" />
+        <comment value="Lichaamsgewicht" />
+      </mapping>
     </element>
     <element id="Task.input:bodyWeight.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -866,6 +965,11 @@
       <short value="BodyHeight search" />
       <definition value="BodyHeight input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-381" />
+        <comment value="Lichaamslengte" />
+      </mapping>
     </element>
     <element id="Task.input:bodyHeight.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -900,6 +1004,11 @@
       <short value="LaboratoryTestResult search" />
       <definition value="LaboratoryTestResult input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-434" />
+        <comment value="LabatoriumUitslag" />
+      </mapping>
     </element>
     <element id="Task.input:laboratoryTestResult.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -934,6 +1043,11 @@
       <short value="Procedure search" />
       <definition value="Procedure input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-387" />
+        <comment value="Verrichting" />
+      </mapping>
     </element>
     <element id="Task.input:procedure.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -968,6 +1082,11 @@
       <short value="Contact search" />
       <definition value="Contact input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-406" />
+        <comment value="Contact" />
+      </mapping>
     </element>
     <element id="Task.input:contact.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -1002,6 +1121,11 @@
       <short value="HealthProvider search" />
       <definition value="HealthProvider input:query-available-resources slice" />
       <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-50" />
+        <comment value="Zorgsetting" />
+      </mapping>
     </element>
     <element id="Task.input:healthProvider.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -1029,6 +1153,43 @@
         <code value="string" />
       </type>
       <fixedString value="CareTeam?status=active&amp;_include=CareTeam:participant" />
+    </element>
+    <element id="Task.input:provenance">
+      <path value="Task.input" />
+      <sliceName value="provenance" />
+      <short value="Provenance search" />
+      <definition value="Provenance input:query-available-resources slice" />
+      <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-594" />
+        <comment value="Dossiergegevens" />
+      </mapping>
+    </element>
+    <element id="Task.input:provenance.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Task.input:provenance.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="67723-7" />
+    </element>
+    <element id="Task.input:provenance.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:provenance.value[x]:ProvenanceString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="ProvenanceString" />
+      <type>
+        <code value="string" />
+      </type>
     </element>
   </differential>
 </StructureDefinition>
