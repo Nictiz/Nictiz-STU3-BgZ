@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="BgZMszNotificationTask" />
   <url value="http://nictiz.nl/fhir/StructureDefinition/BgZMszNotificationTask" />
   <name value="BgZMszNotificationTask" />
+  <title value="BgZMszNotificationTask" />
   <status value="draft" />
+  <publisher value="Nictiz" />
+  <copyright value="CC0" />
   <fhirVersion value="3.0.2" />
+  <mapping>
+    <identity value="BgZ-msz" />
+    <uri value="https://decor.nictiz.nl/art-decor/decor-datasets--bgz2017-?id=2.16.840.1.113883.2.4.3.11.60.42.1.2" />
+    <name value="BgZ-msz" />
+  </mapping>
   <kind value="resource" />
   <abstract value="false" />
   <type value="Task" />
@@ -179,7 +188,7 @@
         <code value="boolean" />
       </type>
     </element>
-    <element id="Task.input:patient">
+  <element id="Task.input:patient">
       <path value="Task.input" />
       <sliceName value="patient" />
       <short value="Patient read" />
