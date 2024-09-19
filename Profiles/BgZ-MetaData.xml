@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="BgZPatientRecordDate" />
-  <url value="http://nictiz.nl/fhir/StructureDefinition/BgZBgZPatientRecordDate" />
-  <name value="BgZPatientRecordDate" />
-  <title value="BgZPatientRecordDate" />
+  <id value="BgZ-Metadata" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/BgZ-Metadata" />
+  <name value="BgZ-Metadata" />
+  <title value="BgZ-Metadata" />
   <status value="draft" />
   <publisher value="Nictiz" />
   <description value="The PatientRecordDate for updating resources" />

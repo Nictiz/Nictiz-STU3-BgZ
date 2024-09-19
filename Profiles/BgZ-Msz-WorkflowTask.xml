@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="BgZMszWorkflowTask" />
-  <url value="http://nictiz.nl/fhir/StructureDefinition/BgZMszWorkflowTask" />
-  <name value="BgZMszWorkflowTask" />
-  <title value="BgZMszWorkflowTask" />
+  <id value="BgZ-Msz-WorkflowTask" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/BgZ-Msz-WorkflowTask" />
+  <name value="BgZ-Msz-WorkflowTask" />
+  <title value="BgZ-Msz-WorkflowTask" />
   <status value="draft" />
   <publisher value="Nictiz" />
   <copyright value="CC0" />
