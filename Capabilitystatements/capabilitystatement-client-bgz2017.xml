@@ -165,6 +165,18 @@
         <reference value="http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrole"/>
         <display value="nl-core-practitionerrole"/>
     </profile>
+    <profile>
+        <reference value="http://nictiz.nl/fhir/StructureDefinition/BgZ-Msz-WorkflowTask"/>
+        <display value="BgZ-Msz-WorkflowTask"/>
+    </profile>
+    <profile>
+        <reference value="http://nictiz.nl/fhir/StructureDefinition/BgZ-Msz-NotificationTask"/>
+        <display value="BgZ-Msz-NotificationTask"/>
+    </profile>
+    <profile>
+        <reference value="http://nictiz.nl/fhir/StructureDefinition/BgZ-Metadata"/>
+        <display value="BgZ-Metadata"/>
+    </profile>
     <rest>
         <mode value="client"/>
         <resource>
@@ -339,6 +351,18 @@
                 <name value="status"/>
                 <type value="token"/>
             </searchParam>
+        </resource>
+        <resource>
+            <type value="Task"/>
+            <interaction>
+                <code value="search-type"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="Provenance"/>
+            <interaction>
+                <code value="search-type"/>
+            </interaction>
         </resource>
         <operation>
             <name value="Last N Observations Query"/>
