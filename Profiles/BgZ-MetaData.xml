@@ -38,8 +38,40 @@
       </mapping>
     </element>
     <element id="Provenance.agent.who[x]:whoReference">
-      <path value="Provenance.agent.whoReference" />
+      <path value="Provenance.agent.who[x]" />
       <sliceName value="whoReference" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-organization" />
+      </type>
+      <mapping>
+        <identity value="hcim-healthprofessional-v3.2-2017EN" />
+        <map value="NL-CM:17.1.1" />
+        <comment value="HealthProfessional" />
+      </mapping>
+      <mapping>
+        <identity value="hcim-healthcareprovider-v3.1.1-2017EN" />
+        <map value="NL-CM:17.2.1" />
+        <comment value="HealthcareProvider" />
+      </mapping>
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-618" />
+        <comment value="Zorgverlener" />
+      </mapping>
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-686" />
+        <comment value="Zorgaanbieder" />
+      </mapping>
+    </element>
+    <element id="Provenance.agent.onBehalfOf[x]:onBehalfOfReference">
+      <path value="Provenance.agent.onBehalfOfReference" />
+      <sliceName value="onBehalfOfReference" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-organization" />

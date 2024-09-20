@@ -188,7 +188,7 @@
         <code value="boolean" />
       </type>
     </element>
-  <element id="Task.input:patient">
+    <element id="Task.input:patient">
       <path value="Task.input" />
       <sliceName value="patient" />
       <short value="Patient read" />
@@ -584,11 +584,11 @@
       <short value="TabaccoUse search" />
       <definition value="TabaccoUse input:query-available-resources slice" />
       <max value="1" />
-      	<mapping>
-          <identity value="BgZ-msz" />
-          <map value="bgz2017-dataelement-320" />
-          <comment value="TabakGebruik" />
-        </mapping>
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-320" />
+        <comment value="TabakGebruik" />
+      </mapping>
     </element>
     <element id="Task.input:tobaccoUse.type.coding.system">
       <path value="Task.input.type.coding.system" />
@@ -1107,7 +1107,7 @@
       <type>
         <code value="string" />
       </type>
-      <fixedString value="Procedure" />
+      <fixedString value="Procedure?category=http://snomed.info/sct|387713003,http://snomed.info/sct|258174001" />
     </element>
     <element id="Task.input:contact">
       <path value="Task.input" />
@@ -1196,7 +1196,7 @@
       <mapping>
         <identity value="BgZ-msz" />
         <map value="bgz2017-dataelement-594" />
-        <comment value="Dossiergegevens" />
+        <comment value="Metagegevens" />
       </mapping>
     </element>
     <element id="Task.input:provenance.type.coding.system">
@@ -1220,9 +1220,11 @@
     <element id="Task.input:provenance.value[x]:ProvenanceString">
       <path value="Task.input.value[x]" />
       <sliceName value="ProvenanceString" />
+      <short value="healthProvider item query string" />
       <type>
         <code value="string" />
       </type>
+      <fixedString value="Provenance" />
     </element>
   </differential>
 </StructureDefinition>
