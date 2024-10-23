@@ -387,7 +387,7 @@
       <type>
         <code value="string" />
       </type>
-      <fixedString value="Observation/$lastn?category=http://snomed.info/sct|118228005,http://snomed.info/sct|384821006" />
+      <fixedString value="Observation?category=http://snomed.info/sct|118228005,http://snomed.info/sct|384821006" />
     </element>
     <element id="Task.input:concern">
       <path value="Task.input" />
@@ -465,7 +465,7 @@
       <type>
         <code value="string" />
       </type>
-      <fixedString value="Observation/$lastn?code=http://snomed.info/sct|365508006" />
+      <fixedString value="Observation?code=http://snomed.info/sct|365508006" />
     </element>
     <element id="Task.input:drugUse">
       <path value="Task.input" />
@@ -543,7 +543,7 @@
       <type>
         <code value="string" />
       </type>
-      <fixedString value="Observation/$lastn?code=http://snomed.info/sct|228273003" />
+      <fixedString value="Observation?code=http://snomed.info/sct|228273003" />
     </element>
     <element id="Task.input:tobaccoUse">
       <path value="Task.input" />
@@ -582,7 +582,7 @@
       <type>
         <code value="string" />
       </type>
-      <fixedString value="Observation/$lastn?code=http://snomed.info/sct|365980008" />
+      <fixedString value="Observation?code=http://snomed.info/sct|365980008" />
     </element>
     <element id="Task.input:nutritionAdvice">
       <path value="Task.input" />
