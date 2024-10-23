@@ -20,6 +20,14 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Provenance" />
   <derivation value="constraint" />
   <differential>
+    <element id="Provenance.target">
+      <path value="Provenance.target" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-687" />
+        <comment value="Doel" />
+      </mapping>
+    </element>
     <element id="Provenance.recorded">
       <path value="Provenance.recorded" />
       <mapping>
