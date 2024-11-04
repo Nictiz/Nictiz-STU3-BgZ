@@ -231,7 +231,7 @@
       <type>
         <code value="string" />
       </type>
-      <fixedString value="Coverage?_include=Coverage:payor:Patient&amp;_include=Coverage:payor:Organization&amp;_include=Coverage:payor:RelatedPerson" />
+      <fixedString value="Coverage?_include=Coverage:payor" />
     </element>
     <element id="Task.input:treatmentDirective">
       <path value="Task.input" />
@@ -310,45 +310,6 @@
         <code value="string" />
       </type>
       <fixedString value="Consent?category=http://snomed.info/sct|11341000146107" />
-    </element>
-    <element id="Task.input:contactPerson">
-      <path value="Task.input" />
-      <sliceName value="contactPerson" />
-      <short value="ContactPerson search" />
-      <definition value="ContactPerson input:query-available-resources slice" />
-      <max value="1" />
-      <mapping>
-        <identity value="BgZ-msz" />
-        <map value="bgz2017-dataelement-252" />
-        <comment value="Contactpersoon" />
-      </mapping>
-    </element>
-    <element id="Task.input:contactPerson.type.coding.system">
-      <path value="Task.input.type.coding.system" />
-      <fixedUri value="http://loinc.org" />
-    </element>
-    <element id="Task.input:contactPerson.type.coding.code">
-      <path value="Task.input.type.coding.code" />
-      <fixedCode value="79191-3" />
-    </element>
-    <element id="Task.input:contactPerson.value[x]">
-      <path value="Task.input.value[x]" />
-      <slicing>
-        <discriminator>
-          <type value="type" />
-          <path value="$this" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-    </element>
-    <element id="Task.input:contactPerson.value[x]:contactPersonValueString">
-      <path value="Task.input.value[x]" />
-      <sliceName value="contactPersonValueString" />
-      <short value="contactPerson item query string" />
-      <type>
-        <code value="string" />
-      </type>
-      <fixedString value="Don't know - need to fill in" />
     </element>
     <element id="Task.input:functionalOrMentalStatus">
       <path value="Task.input" />
@@ -733,7 +694,7 @@
       <type>
         <code value="string" />
       </type>
-      <fixedString value="MedicationStatement?category=urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.3|6&amp;_include=MedicationStatement:medication" />
+      <fixedString value="MedicationStatement?category=urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.3|6&amp;_include=MedicationStatement:medicationReference" />
     </element>
     <element id="Task.input:medicationAgreement">
       <path value="Task.input" />
@@ -767,7 +728,7 @@
       <type>
         <code value="string" />
       </type>
-      <fixedString value="MedicationRequest?category=http://snomed.info/sct|16076005&amp;_include=MedicationRequest:medication" />
+      <fixedString value="MedicationRequest?category=http://snomed.info/sct|16076005&amp;_include=MedicationRequest:medicationReference" />
     </element>
     <element id="Task.input:administrationAgreement">
       <path value="Task.input" />
@@ -801,7 +762,7 @@
       <type>
         <code value="string" />
       </type>
-      <fixedString value="MedicationDispense?category=http://snomed.info/sct|422037009&amp;_include=MedicationDispense:medication" />
+      <fixedString value="MedicationDispense?category=http://snomed.info/sct|422037009&amp;_include=MedicationDispense:medicationReference" />
     </element>
     <element id="Task.input:medicalDevice">
       <path value="Task.input" />
@@ -1035,7 +996,7 @@
       <type>
         <code value="string" />
       </type>
-      <fixedString value="Observation/$lastn?category=http://snomed.info/sct|275711006&amp;_include=Observation:related-target&amp;_include=Observation:specimen" />
+      <fixedString value="Observation/$lastn?category=http://snomed.info/sct|49581000146104&amp;_include=Observation:related-target" />
     </element>
     <element id="Task.input:procedure">
       <path value="Task.input" />
