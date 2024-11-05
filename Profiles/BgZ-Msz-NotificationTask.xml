@@ -708,7 +708,7 @@
     </element>
     <element id="Task.input:medicationUse.type.coding.code">
       <path value="Task.input.type.coding.code" />
-      <fixedCode value="422979000" />
+      <fixedCode value="16076005" />
     </element>
     <element id="Task.input:medicationUse.value[x]">
       <path value="Task.input.value[x]" />
@@ -742,7 +742,7 @@
     </element>
     <element id="Task.input:medicationAgreement.type.coding.code">
       <path value="Task.input.type.coding.code" />
-      <fixedCode value="16076005" />
+      <fixedCode value="422979000" />
     </element>
     <element id="Task.input:medicationAgreement.value[x]">
       <path value="Task.input.value[x]" />
@@ -1070,6 +1070,45 @@
       </type>
       <fixedString value="Procedure?category=http://snomed.info/sct|387713003,http://snomed.info/sct|258174001" />
     </element>
+    <element id="Task.input:procedureRequest">
+      <path value="Task.input" />
+      <sliceName value="procedureRequest" />
+      <short value="Procedure search" />
+      <definition value="Procedure input:query-available-resources slice" />
+      <max value="1" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-387" />
+        <comment value="Verrichting" />
+      </mapping>
+    </element>
+    <element id="Task.input:procedureRequest.type.coding.system">
+      <path value="Task.input.type.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Task.input:procedureRequest.type.coding.code">
+      <path value="Task.input.type.coding.code" />
+      <fixedCode value="18776-5" />
+    </element>
+    <element id="Task.input:procedure.value[x]">
+      <path value="Task.input.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Task.input:procedureRequest.value[x]:procedureRequestValueString">
+      <path value="Task.input.value[x]" />
+      <sliceName value="procedureRequestValueString" />
+      <short value="procedureRequest item query string" />
+      <type>
+        <code value="string" />
+      </type>
+      <fixedString value="ProcedureRequest?status=active"/>
+    </element>
     <element id="Task.input:contact">
       <path value="Task.input" />
       <sliceName value="contact" />
@@ -1123,11 +1162,11 @@
     </element>
     <element id="Task.input:healthProvider.type.coding.system">
       <path value="Task.input.type.coding.system" />
-      <fixedUri value="http://loinc.org" />
+      <fixedUri value="http://snomed.info/sct" />
     </element>
     <element id="Task.input:healthProvider.type.coding.code">
       <path value="Task.input.type.coding.code" />
-      <fixedCode value="check-code" />
+      <fixedCode value="229774002" />
     </element>
     <element id="Task.input:healthProvider.value[x]">
       <path value="Task.input.value[x]" />
@@ -1162,11 +1201,11 @@
     </element>
     <element id="Task.input:provenance.type.coding.system">
       <path value="Task.input.type.coding.system" />
-      <fixedUri value="http://loinc.org" />
+      <fixedUri value="http://snomed.info/sct" />
     </element>
     <element id="Task.input:provenance.type.coding.code">
       <path value="Task.input.type.coding.code" />
-      <fixedCode value="67723-7" />
+      <fixedCode value="257733005" />
     </element>
     <element id="Task.input:provenance.value[x]">
       <path value="Task.input.value[x]" />
