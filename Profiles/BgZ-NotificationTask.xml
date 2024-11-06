@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="BgZ-Msz-NotificationTask" />
   <url value="http://nictiz.nl/fhir/StructureDefinition/BgZ-NotificationTask" />
-  <version value="2.0-beta.1"/>
+  <version value="2.0-beta.1" />
   <name value="BgZ-NotificationTask" />
   <title value="BgZ-NotificationTask" />
   <status value="draft" />
@@ -1074,12 +1074,12 @@
     <element id="Task.input:procedureRequest">
       <path value="Task.input" />
       <sliceName value="procedureRequest" />
-      <short value="Procedure search" />
-      <definition value="Procedure input:query-available-resources slice" />
+      <short value="Procedurerequest search" />
+      <definition value="Procedurerequest input:query-available-resources slice" />
       <max value="1" />
       <mapping>
         <identity value="BgZ-msz" />
-        <map value="bgz2017-dataelement-387" />
+        <map value="bgz2017-dataelement-959" />
         <comment value="Verrichting" />
       </mapping>
     </element>
@@ -1091,7 +1091,7 @@
       <path value="Task.input.type.coding.code" />
       <fixedCode value="18776-5" />
     </element>
-    <element id="Task.input:procedure.value[x]">
+    <element id="Task.input:procedureRequest.value[x]">
       <path value="Task.input.value[x]" />
       <slicing>
         <discriminator>
@@ -1108,7 +1108,7 @@
       <type>
         <code value="string" />
       </type>
-      <fixedString value="ProcedureRequest?status=active"/>
+      <fixedString value="ProcedureRequest?status=active" />
     </element>
     <element id="Task.input:contact">
       <path value="Task.input" />
