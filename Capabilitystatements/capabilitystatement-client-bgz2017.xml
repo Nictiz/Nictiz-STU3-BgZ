@@ -1,9 +1,9 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
     <url value="http://nictiz.nl/fhir/CapabilityStatement/bgz2017-clientcapabilities"/>
-    <version value="1.1.1"/>
+    <version value="2.0-beta.1"/>
     <name value="BGZ2017Client"/>
     <status value="active"/>
-    <date value="2022-09-27"/>
+    <date value="2024-11-05"/>
     <publisher value="Nictiz"/>
     <contact>
         <name value="Nictiz"/>
@@ -166,6 +166,10 @@
         <display value="nl-core-practitionerrole"/>
     </profile>
     <profile>
+        <reference value="http://fhir.nl/fhir/StructureDefinition/nl-core-careteam"/>
+        <display value="nl-core-careteam"/>
+    </profile>
+    <profile>
         <reference value="http://nictiz.nl/fhir/StructureDefinition/BgZ-Msz-WorkflowTask"/>
         <display value="BgZ-Msz-WorkflowTask"/>
     </profile>
@@ -210,7 +214,6 @@
                 <code value="search-type"/>
             </interaction>
             <searchInclude value="Observation:related-target"/>
-            <searchInclude value="Observation:specimen"/>
             <searchParam>
                 <name value="category"/>
                 <type value="token"/>
@@ -351,6 +354,13 @@
                 <name value="status"/>
                 <type value="token"/>
             </searchParam>
+        </resource>
+        <resource>
+            <type value="CareTeam"/>
+            <interaction>
+                <code value="search-type"/>
+            </interaction>
+            <searchInclude value="CareTeam:participant"/>
         </resource>
         <resource>
             <type value="Task"/>

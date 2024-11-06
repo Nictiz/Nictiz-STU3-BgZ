@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="BgZ-Msz-NotificationTask" />
-  <url value="http://nictiz.nl/fhir/StructureDefinition/BgZ-Msz-NotificationTask" />
-  <name value="BgZ-Msz-NotificationTask" />
-  <title value="BgZ-Msz-NotificationTask" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/BgZ-NotificationTask" />
+  <version value="2.0-beta.1"/>
+  <name value="BgZ-NotificationTask" />
+  <title value="BgZ-NotificationTask" />
   <status value="draft" />
   <publisher value="Nictiz" />
   <copyright value="CC0" />

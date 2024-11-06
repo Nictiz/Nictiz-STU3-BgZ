@@ -2,6 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="BgZ-Metadata" />
   <url value="http://nictiz.nl/fhir/StructureDefinition/BgZ-Metadata" />
+  <version value="2.0-beta.1"/>
   <name value="BgZ-Metadata" />
   <title value="BgZ-Metadata" />
   <status value="draft" />

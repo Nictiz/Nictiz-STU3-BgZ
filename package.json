@@ -1,21 +1,20 @@
 {
-    "name": "nictiz.fhir.nl.stu3.bgz",
-    "version": "1.1.1",
+    "name": "nictiz.fhir.nl.stu3.bgzmsz",
+    "version": "2.0-beta.1",
     "canonical": null,
-    "url": "https://informatiestandaarden.nictiz.nl/wiki/MedMij:V2020.01/OntwerpBGZ_2017",
+    "url": "https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_BgZ",
     "title": "Nictiz FHIR NL STU3 BgZ",
     "description": "Nictiz NL package of FHIR STU3 conformance resources for BgZ.",
     "keywords": [
         "BgZ",
         "nl",
-        "Nictiz",
-        "MedMij"
+        "Nictiz"
     ],
     "author": "nictiz",
     "maintainers": [
         {
             "name": "Nictiz",
-            "email": "standaarden@medmij.nl"
+            "url": "https://www.nictiz.nl"
         }
     ],
     "license": "CC0-1.0",
