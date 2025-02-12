@@ -170,14 +170,6 @@
         <display value="nl-core-careteam"/>
     </profile>
     <profile>
-        <reference value="http://nictiz.nl/fhir/StructureDefinition/BgZ-Msz-WorkflowTask"/>
-        <display value="BgZ-Msz-WorkflowTask"/>
-    </profile>
-    <profile>
-        <reference value="http://nictiz.nl/fhir/StructureDefinition/BgZ-Msz-NotificationTask"/>
-        <display value="BgZ-Msz-NotificationTask"/>
-    </profile>
-    <profile>
         <reference value="http://nictiz.nl/fhir/StructureDefinition/BgZ-Metadata"/>
         <display value="BgZ-Metadata"/>
     </profile>
@@ -361,12 +353,6 @@
                 <code value="search-type"/>
             </interaction>
             <searchInclude value="CareTeam:participant"/>
-        </resource>
-        <resource>
-            <type value="Task"/>
-            <interaction>
-                <code value="search-type"/>
-            </interaction>
         </resource>
         <resource>
             <type value="Provenance"/>
