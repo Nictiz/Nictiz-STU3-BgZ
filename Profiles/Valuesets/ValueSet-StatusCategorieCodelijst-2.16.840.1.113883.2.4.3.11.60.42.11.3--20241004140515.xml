@@ -1,0 +1,46 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+    <id value="2.16.840.1.113883.2.4.3.11.60.42.11.3--20241004140515"/>
+    <meta>
+        <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/><!--<profile value="http://hl7.org/fhir/3.0/StructureDefinition/ValueSet"/>-->
+    </meta>
+    <extension url="http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod">
+        <valuePeriod>
+            <start value="2024-10-04T14:05:15Z"/>
+        </valuePeriod>
+    </extension>
+    <url value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.42.11.3--20241004140515"/>
+    <identifier>
+        <use value="official"/>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:2.16.840.1.113883.2.4.3.11.60.42.11.3"/>
+    </identifier>
+    <version value="2024-10-04T14:05:15"/>
+    <name value="StatusCategorieCodelijst"/>
+    <title value="StatusCategorieCodelijst"/>
+    <status value="draft"/>
+    <experimental value="false"/>
+    <publisher value="Nictiz"/>
+    <contact>
+        <name value="Nictiz"/>
+        <telecom>
+            <system value="url"/>
+            <value value="http://www.nictiz.nl"/>
+        </telecom>
+    </contact>
+    <description value="StatusCategorieCodelijst"/>
+    <immutable value="false"/>
+    <copyright value="This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyright of the International Health Terminology Standards Development Organisation (IHTSDO). Implementers of these artefacts must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/getsnomed-ct or info@snomed.org."/>
+    <compose>
+        <include>
+            <system value="http://snomed.info/sct"/>
+            <concept>
+                <code value="118228005"/>
+                <display value="bevinding betreffende functioneren"/>
+            </concept>
+            <concept>
+                <code value="384821006"/>
+                <display value="bevinding betreffende mentale toestand, gedrag en/of psychosociaal functioneren"/>
+            </concept>
+        </include>
+    </compose>
+</ValueSet>
