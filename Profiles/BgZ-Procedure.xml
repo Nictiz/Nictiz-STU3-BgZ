@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="BgZ-Procedure" />
+  <url value="https://example.org/fhir/StructureDefinition/BgZ-Procedure" />
+  <version value="2.0-beta.2" />
+  <name value="BgZ-Procedure" />
+  <title value="BgZ-Procedure" />
+  <status value="draft" />
+  <publisher value="Nictiz" />
+  <description value="The BgZ procedure profile where mappings towards the category is added." />
+  <copyright value="CC0" />
+  <fhirVersion value="3.0.2" />
+  <mapping>
+    <identity value="BgZ-msz" />
+    <uri value="https://decor.nictiz.nl/art-decor/decor-datasets--bgz2017-?id=2.16.840.1.113883.2.4.3.11.60.42.1.2" />
+    <name value="BgZ-msz" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Procedure" />
+  <baseDefinition value="http://nictiz.nl/fhir/StructureDefinition/zib-Procedure" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Procedure.category">
+      <path value="Procedure.category" />
+      <comment value="If the specific category is unknown than the default value SHALL be &quot;71388002&quot;.&#xD;&#xA;&#xD;&#xA;Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination." />
+      <binding>
+        <strength value="extensible" />
+        <valueSetReference>
+          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.42.11.2--20241003115148" />
+        </valueSetReference>
+      </binding>
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-755" />
+        <comment value="VerrichtingCategorie" />
+      </mapping>
+    </element>
+  </differential>
+</StructureDefinition>
