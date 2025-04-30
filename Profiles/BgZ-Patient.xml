@@ -1,5 +1,5 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <url value="http://fhir.nl/fhir/StructureDefinition/BgZ-Patient" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/BgZ-Patient" />
   <version value="2.0-beta.2" />
   <name value="BgZ-Patient" />
   <title value="BgZ-Patient" />

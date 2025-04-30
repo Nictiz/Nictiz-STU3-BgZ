@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <url value="http://nictiz.nl/fhir/fhir/StructureDefinition/BgZ-FunctionalOrMentalStatus" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/BgZ-FunctionalOrMentalStatus" />
   <version value="2.0-beta.2" />
   <name value="BgZ-FunctionalOrMentalStatus" />
   <title value="BgZ-FunctionalOrMentalStatus" />
