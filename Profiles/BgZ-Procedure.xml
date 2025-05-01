@@ -26,6 +26,7 @@
       <comment value="If the specific category is unknown than the default value SHALL be &quot;71388002&quot;.&#xD;&#xA;&#xD;&#xA;Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination." />
       <binding>
         <strength value="extensible" />
+        <description value="VerrichtingCategorie" />
         <valueSetReference>
           <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.42.11.2--20241003115148" />
         </valueSetReference>
@@ -33,7 +34,7 @@
       <mapping>
         <identity value="BgZ-msz" />
         <map value="bgz2017-dataelement-755" />
-        <comment value="VerrichtingCategorie" />
+        <comment value="ProcedureCategory" />
       </mapping>
     </element>
   </differential>

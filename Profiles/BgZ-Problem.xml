@@ -42,6 +42,7 @@
       <mapping>
         <identity value="BgZ-msz" />
         <map value="bgz2017-dataelement-819" />
+        <comment value="SpecificProblemName" />
       </mapping>
     </element>
   </differential>
