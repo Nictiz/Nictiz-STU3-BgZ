@@ -1,9 +1,9 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
     <url value="http://nictiz.nl/fhir/CapabilityStatement/bgz2017-clientcapabilities"/>
-    <version value="2.0-beta.2"/>
+    <version value="2.0-beta.3"/>
     <name value="BGZ2017Client"/>
     <status value="active"/>
-    <date value="2024-11-05"/>
+    <date value="2025-05-08"/>
     <publisher value="Nictiz"/>
     <contact>
         <name value="Nictiz"/>

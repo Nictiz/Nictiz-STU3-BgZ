@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <url value="http://nictiz.nl/fhir/StructureDefinition/BgZ-Problem" />
-  <version value="2.0-beta.2" />
+  <version value="2.0-beta.3" />
   <name value="BgZ-Problem" />
   <title value="BgZ-Problem" />
   <status value="draft" />
