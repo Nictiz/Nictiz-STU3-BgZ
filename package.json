@@ -1,6 +1,6 @@
 {
     "name": "nictiz.fhir.nl.stu3.bgzmsz",
-    "version": "2.0-beta.3",
+    "version": "2.0.0-beta.3",
     "canonical": null,
     "url": "https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_BgZ",
     "title": "Nictiz FHIR NL STU3 BgZ",
