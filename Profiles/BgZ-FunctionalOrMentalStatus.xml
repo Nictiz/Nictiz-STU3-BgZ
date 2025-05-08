@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://nictiz.nl/fhir/StructureDefinition/BgZ-FunctionalOrMentalStatus" />
+  <version value="2.0-beta.3" />
+  <name value="BgZ-FunctionalOrMentalStatus" />
+  <title value="BgZ-FunctionalOrMentalStatus" />
+  <status value="draft" />
+  <publisher value="Nictiz" />
+  <description value="The derived profile for the zib-FunctionalMentalStatus. This profile contains a mapping to the VerrichtingCategorie codelijst." />
+  <copyright value="CC0" />
+  <fhirVersion value="3.0.2" />
+  <mapping>
+    <identity value="BgZ-msz" />
+    <uri value="https://decor.nictiz.nl/art-decor/decor-datasets--bgz2017-?id=2.16.840.1.113883.2.4.3.11.60.42.1.2" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Observation" />
+  <baseDefinition value="http://nictiz.nl/fhir/StructureDefinition/zib-FunctionalOrMentalStatus" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Observation.category">
+      <path value="Observation.category" />
+      <short value="StatusCategory" />
+      <definition value="The category states if the resource is a functional or mental observation." />
+      <alias value="StatusCategorie" />
+      <binding>
+        <strength value="extensible" />
+        <description value="StatusCategorieLijst" />
+        <valueSetReference>
+          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.42.11.3--20241004140515" />
+        </valueSetReference>
+      </binding>
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-595" />
+        <comment value="StatusCategory" />
+      </mapping>
+    </element>
+    <element id="Observation.category.coding:functionalCode">
+      <path value="Observation.category.coding" />
+      <sliceName value="functionalCode" />
+    </element>
+    <element id="Observation.category.coding:functionalCode.system">
+      <path value="Observation.category.coding.system" />
+      <mapping>
+        <identity value="BgZ-msz" />
+        <map value="bgz2017-dataelement-756" />
+        <comment value="StatusCategory" />
+      </mapping>
+    </element>
+  </differential>
+</StructureDefinition>
