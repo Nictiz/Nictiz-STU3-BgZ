@@ -22,16 +22,16 @@
     <format value="xml"/>
     <format value="json"/>
     <profile>
-        <reference value="http://fhir.nl/fhir/StructureDefinition/nl-core-patient"/>
-        <display value="nl-core-patient"/>
+        <reference value="http://fhir.nl/fhir/StructureDefinition/BgZ-patient"/>
+        <display value="bgz-patient"/>
     </profile>
     <profile>
         <reference value="http://nictiz.nl/fhir/StructureDefinition/zib-Payer"/>
         <display value="zib-Payer"/>
     </profile>
     <profile>
-        <reference value="http://nictiz.nl/fhir/StructureDefinition/zib-Problem"/>
-        <display value="zib-Problem"/>
+        <reference value="http://nictiz.nl/fhir/StructureDefinition/BgZ-Problem"/>
+        <display value="bgz-Problem"/>
     </profile>
     <profile>
         <reference value="http://fhir.nl/fhir/StructureDefinition/nl-core-organization"/>
@@ -46,12 +46,8 @@
         <display value="zib-AdvanceDirective"/>
     </profile>
     <profile>
-        <reference value="http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson"/>
-        <display value="nl-core-relatedperson"/>
-    </profile>
-    <profile>
-        <reference value="http://nictiz.nl/fhir/StructureDefinition/zib-FunctionalOrMentalStatus"/>
-        <display value="zib-FunctionalOrMentalStatus"/>
+        <reference value="http://nictiz.nl/fhir/StructureDefinition/BgZ-FunctionalOrMentalStatus"/>
+        <display value="bgz-FunctionalOrMentalStatus"/>
     </profile>
     <profile>
         <reference value="http://nictiz.nl/fhir/StructureDefinition/zib-LivingSituation"/>
@@ -106,10 +102,6 @@
         <display value="zib-Vaccination"/>
     </profile>
     <profile>
-        <reference value="http://nictiz.nl/fhir/StructureDefinition/zib-VaccinationRecommendation"/>
-        <display value="zib-VaccinationRecommendation"/>
-    </profile>
-    <profile>
         <reference value="http://nictiz.nl/fhir/StructureDefinition/zib-BloodPressure"/>
         <display value="zib-BloodPressure"/>
     </profile>
@@ -130,12 +122,8 @@
         <display value="zib-LaboratoryTestResult-DiagnosticReport"/>
     </profile>
     <profile>
-        <reference value="http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Specimen"/>
-        <display value="zib-LaboratoryTestResult-Specimen"/>
-    </profile>
-    <profile>
-        <reference value="http://nictiz.nl/fhir/StructureDefinition/zib-Procedure"/>
-        <display value="zib-Procedure"/>
+        <reference value="http://nictiz.nl/fhir/StructureDefinition/BgZ-Procedure"/>
+        <display value="bgz-Procedure"/>
     </profile>
     <profile>
         <reference value="http://nictiz.nl/fhir/StructureDefinition/zib-Encounter"/>
@@ -144,10 +132,6 @@
     <profile>
         <reference value="http://nictiz.nl/fhir/StructureDefinition/zib-ProcedureRequest"/>
         <display value="zib-ProcedureRequest"/>
-    </profile>
-    <profile>
-        <reference value="http://nictiz.nl/fhir/StructureDefinition/zib-VaccinationRecommendation"/>
-        <display value="zib-VaccinationRecommendation"/>
     </profile>
     <profile>
         <reference value="http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceRequest"/>
