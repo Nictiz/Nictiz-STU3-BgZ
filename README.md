@@ -1,5 +1,5 @@
 # Nictiz-STU3-BgZ
-This repository contains HL7 FHIR STU3 compliant profiles for the information standard [BgZ](https://informatiestandaarden.nictiz.nl/wiki/MedMij:V2019.01_OntwerpBGZ_2017). This is the stable branch for the **1.x.x version** of the package.
+This repository contains HL7 FHIR STU3 compliant profiles for the information standard [BgZ-MSZ](https://informatiestandaarden.nictiz.nl/wiki/bgz:V2.0_Ontwerp_BgZ_MSZ). This is the stable branch for the **BgZ-MSZ 2.0.x version** of the package.
 
 The Dutch National ICT institute in the Netherlands (Nictiz) maintains this repository and its contents.
 
