@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="BgZ-Procedure" />
   <url value="http://nictiz.nl/fhir/StructureDefinition/BgZ-Procedure" />
-  <version value="2.0-beta.3" />
+  <version value="2.0.0" />
   <name value="BgZ-Procedure" />
   <title value="BgZ-Procedure" />
   <status value="draft" />

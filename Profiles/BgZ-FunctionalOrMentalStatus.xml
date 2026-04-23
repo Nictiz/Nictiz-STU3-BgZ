@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <url value="http://nictiz.nl/fhir/StructureDefinition/BgZ-FunctionalOrMentalStatus" />
-  <version value="2.0-beta.3" />
+  <version value="2.0.0" />
   <name value="BgZ-FunctionalOrMentalStatus" />
   <title value="BgZ-FunctionalOrMentalStatus" />
   <status value="draft" />
@@ -33,21 +33,13 @@
       </binding>
       <mapping>
         <identity value="BgZ-msz" />
-        <map value="bgz2017-dataelement-595" />
+        <map value="bgz2017-dataelement-756" />
         <comment value="StatusCategory" />
       </mapping>
     </element>
     <element id="Observation.category.coding:functionalCode">
       <path value="Observation.category.coding" />
       <sliceName value="functionalCode" />
-    </element>
-    <element id="Observation.category.coding:functionalCode.system">
-      <path value="Observation.category.coding.system" />
-      <mapping>
-        <identity value="BgZ-msz" />
-        <map value="bgz2017-dataelement-756" />
-        <comment value="StatusCategory" />
-      </mapping>
     </element>
   </differential>
 </StructureDefinition>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <url value="http://nictiz.nl/fhir/StructureDefinition/BgZ-Problem" />
-  <version value="2.0-beta.3" />
+  <version value="2.0.0" />
   <name value="BgZ-Problem" />
   <title value="BgZ-Problem" />
   <status value="draft" />
@@ -25,20 +25,9 @@
       <sliceName value="specificProblemName" />
       <type>
         <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/code-specification" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/bgz-SpecificProblemName" />
       </type>
       <isModifier value="false" />
-    </element>
-    <element id="Condition.code.extension:specificProblemName.valueCodeableConcept:valueCodeableConcept">
-      <path value="Condition.code.extension.valueCodeableConcept" />
-      <sliceName value="valueCodeableConcept" />
-      <binding>
-        <strength value="extensible" />
-        <description value="The specific problem name defines the problem." />
-        <valueSetReference>
-          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.5.1.3--20171231000000" />
-        </valueSetReference>
-      </binding>
       <mapping>
         <identity value="BgZ-msz" />
         <map value="bgz2017-dataelement-819" />
