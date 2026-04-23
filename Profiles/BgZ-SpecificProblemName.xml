@@ -14,7 +14,7 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="An extension to add the restrictions or specific circumstances that apply to a certain treatment to the Concent resourse. This concept is defined by the Dutch Health and Care Information models (Dutch: Zorginformatiebouwsteen or ZIB) TreatmentDirective version 3.1, release 2017." />
+  <description value="An extension to add the specific problem name or specific circumstances that apply to a certain treatment to the Condition resource." />
   <copyright value="CC0" />
   <fhirVersion value="3.0.2" />
   <kind value="complex-type" />
